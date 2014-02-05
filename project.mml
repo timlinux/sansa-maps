@@ -53,12 +53,12 @@
         "project": "SANSA",
         "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
       },
-      "id": "SANSA",
-      "class": "test",
+      "id": "provinces",
+      "class": "",
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "SANSA"
+      "name": "provinces"
     }
   ],
   "scale": 1,
