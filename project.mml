@@ -39,7 +39,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select  * from nbi_biodiversity_priority_areas) as biodiversitypriority\n\n",
+        "table": "(select  * from nbi_biodiversity_priority_areas) as biodiversitypriority",
         "key_field": "gid",
         "geometry_field": "the_geom",
         "extent_cache": "auto",
@@ -56,6 +56,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "biodiversitypriority"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        22.6991665317768,
+        -33.4178829099946,
+        32.8946409953876,
+        -22.3482806272425
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from tribal) as tribes",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "22.6991665317768,-33.4178829099946,32.8946409953876,-22.3482806272425",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "tribes",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "tribes"
     },
     {
       "geometry": "polygon",
@@ -283,6 +311,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "bio_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        22.6991665317768,
+        -33.4178829099946,
+        32.8946409953876,
+        -22.3482806272425
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from tribal) as tribes",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "22.6991665317768,-33.4178829099946,32.8946409953876,-22.3482806272425",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "tribes_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "tribes_labels"
     }
   ],
   "scale": 1,

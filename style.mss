@@ -70,18 +70,40 @@ Map {
     }
 }
 
-#biodiversitypriority [zoom > 7] {
-    polygon-opacity:0.3;
-    polygon-fill:#91c039;
-    line-color:#91c039;
-    line-width:0.5;
+#biodiversitypriority [zoom > 7]{
+    line-color:#91c039 ;
+    line-width:0.3;
+    polygon-opacity:0.4;
+    polygon-fill:#91c039 ;
+
 }
 
+#tribes_labels [zoom > 10]{
+ ::label {
+    text-name: [ta];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill:  #532f8b;
+    text-size: 12;
+    text-halo-fill: fadeout(#D8D4FF, 30%);
+    text-halo-radius: 1.5;
+    text-allow-overlap: false;
+    text-wrap-width: 50;
+    text-min-padding: 10;
+    text-transform: lowercase;
+    
+    }
+}
+
+#tribes [zoom > 10]  {
+    line-width: 0.5;
+    line-color: #532f8b;
+    line-dasharray: 10, 4;
+}
 
 #localmunics[zoom > 8] {
-  ::outline{
-  line-color:#CCCCCC;
-  line-width:0.2;
+    ::outline{
+    line-color:#CCCCCC;
+    line-width:0.2;
 }
 }
 
@@ -129,6 +151,9 @@ Map {
    
     }
 }
+
+
+
 
 
 
