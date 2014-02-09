@@ -143,6 +143,90 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "provinces"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        16.4557910141931,
+        -34.8329119913289,
+        32.8914299605803,
+        -22.1251320113627
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from municipl) as localmunics",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.4557910141931,-34.8329119913289,32.8914299605803,-22.1251320113627",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "lc_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "lc_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        16.4557006339403,
+        -34.833014999534,
+        32.8914300005394,
+        -22.1251322627142
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from d_councl) as districtcouncils",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.4557006339403,-34.833014999534,32.8914300005394,-22.1251322627142",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "dc_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "dc_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        18.308153015351,
+        -34.3596379963018,
+        31.185657612692204,
+        -25.323120589461
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from a_munic) as metros",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "18.308153015351,-34.3596379963018,31.1856576126922,-25.323120589461",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "metro_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "metro_labels"
     }
   ],
   "scale": 1,
