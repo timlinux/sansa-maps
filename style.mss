@@ -55,11 +55,33 @@ Map {
     }
 }
 
+#bio_labels [zoom > 7] {
+ ::label {
+    text-name: [names];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill:  #74953d ;
+    text-size: 10;
+    text-halo-fill: fadeout(yellow, 30%);
+    text-halo-radius: 1.5;
+    text-allow-overlap: false;
+    text-wrap-width: 100;
+    text-min-padding: 10;
+    
+    }
+}
+
+#biodiversitypriority [zoom > 7] {
+    polygon-opacity:0.3;
+    polygon-fill:#91c039;
+    line-color:#91c039;
+    line-width:0.5;
+}
+
 
 #localmunics[zoom > 8] {
   ::outline{
   line-color:#CCCCCC;
-  line-width:0.5;
+  line-width:0.2;
 }
 }
 
@@ -102,10 +124,17 @@ Map {
     text-fill: #002c5f ;
     text-size: 12;
     text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 2;
    
-    
     }
 }
+
+
+
+
+
+
 
 
 

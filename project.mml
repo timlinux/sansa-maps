@@ -32,6 +32,34 @@
     {
       "geometry": "polygon",
       "extent": [
+        16.452962664812,
+        -34.8336007251724,
+        32.892798144143,
+        -22.377403163825
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select  * from nbi_biodiversity_priority_areas) as biodiversitypriority\n\n",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.452962664812,-34.8336007251724,32.892798144143,-22.377403163825",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "biodiversitypriority",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "biodiversitypriority"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         16.4557910141931,
         -34.8329119913289,
         32.8914299605803,
@@ -227,6 +255,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "metro_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        16.452962664812,
+        -34.8336007251724,
+        32.892798144143,
+        -22.377403163825
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select  * from nbi_biodiversity_priority_areas) as biodiversitypriority",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.452962664812,-34.8336007251724,32.892798144143,-22.377403163825",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "bio_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "bio_labels"
     }
   ],
   "scale": 1,
