@@ -32,6 +32,34 @@
     {
       "geometry": "polygon",
       "extent": [
+        16.461888,
+        -34.833146,
+        32.891591,
+        -22.12594
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from za_cadastral_national) as cadastrals",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.461888,-34.833146,32.891591,-22.12594",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "cadastrals",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "cadastrals"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         16.452962664812,
         -34.8336007251724,
         32.892798144143,
