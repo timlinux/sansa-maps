@@ -339,6 +339,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "tribes_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        16.4171428712399,
+        -34.8289566037617,
+        32.4220619207555,
+        -22.0684471113661
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from major_towns) as towns",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.4171428712399,-34.8289566037617,32.4220619207555,-22.0684471113661",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "town_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "town_labels"
     }
   ],
   "scale": 1,

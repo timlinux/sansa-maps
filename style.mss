@@ -30,7 +30,7 @@ Map {
     text-name: [munic_name];
     text-face-name: 'DejaVu Sans Book';
     text-fill: #C487D0;
-    text-size: 10;
+    text-size: 12;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2;
     text-allow-overlap: false;
@@ -100,6 +100,22 @@ Map {
     line-dasharray: 10, 4;
 }
 
+#town_labels [zoom > 7] {
+ ::label {
+    text-name: [name];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill:  #FF1493;
+    text-size: 10;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 1.5;
+    text-allow-overlap: false;
+    text-wrap-width: 50;
+    text-min-padding: 10;
+    text-transform: lowercase;
+    
+    }
+}
+
 #localmunics[zoom > 8] {
     ::outline{
     line-color:#CCCCCC;
@@ -144,20 +160,13 @@ Map {
     text-name: [provname];
     text-face-name: 'DejaVu Sans Bold';
     text-fill: #002c5f ;
-    text-size: 12;
+    text-size: 14;
     text-allow-overlap: false;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2;
    
     }
 }
-
-
-
-
-
-
-
 
 
 
