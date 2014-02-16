@@ -13,7 +13,10 @@
   "format": "png",
   "interactivity": {
     "layer": "schools",
-    "fields": [],
+    "fields": [
+      "name",
+      "gid"
+    ],
     "template_full": "",
     "template_teaser": "<b>School Name</b><br/>{{{name}}}"
   },
@@ -374,33 +377,32 @@
       "name": "tribes_labels"
     },
     {
-      "geometry": "polygon",
+      "geometry": "point",
       "extent": [
-        16.4171428712399,
-        -34.8289566037617,
-        32.4220619207555,
-        -22.0684471113661
+        16.49321,
+        -34.820820000000005,
+        32.8491,
+        -22.330870000000004
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select * from major_towns) as towns",
+        "table": "(select * from plc_name) as places",
         "key_field": "gid",
         "geometry_field": "the_geom",
         "extent_cache": "auto",
-        "extent": "16.4171428712399,-34.8289566037617,32.4220619207555,-22.0684471113661",
+        "extent": "16.49321,-34.82082,32.8491,-22.33087",
         "dbname": "catalogue_gis",
         "host": "localhost",
         "port": "5432",
         "user": "petronella",
         "password": "postgres"
       },
-      "id": "town_labels",
+      "id": "places",
       "class": "",
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "town_labels",
-      "status": "off"
+      "name": "places"
     },
     {
       "geometry": "point",

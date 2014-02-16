@@ -17,8 +17,8 @@ Map {
 
 }
 
-#railways [zoom <= 18]{
-	::line, ::hatch { line-color: #777; }
+#railways [zoom > 7] [zoom <= 18]{
+	::line, ::hatch { line-color: #A0A0A0; }
   	::line { line-width:1; }
   	::hatch {
     line-width: 4;
@@ -127,9 +127,9 @@ Map {
     line-dasharray: 10, 4;
 }
 
-#town_labels [zoom > 7] {
+#places [zoom > 10] {
  ::label {
-    text-name: [name];
+    text-name: [placename];
     text-face-name: 'DejaVu Sans Book';
     text-fill:  #FF1493;
     text-size: 10;
@@ -194,6 +194,9 @@ Map {
    
     }
 }
+
+
+
 
 
 
