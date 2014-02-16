@@ -11,6 +11,17 @@ Map {
   polygon-fill: #fff;
 }
 
+#schools [zoom > 13]  { 
+    marker-file: url(maki/school-18.svg); 
+    marker-transform:"scale(1)";
+    text-name: [name];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill: #555555;
+    text-size: 10;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 1.5;
+}
+
 #metro_labels [zoom > 6] {
   ::label {
     text-name: [metro];
@@ -167,6 +178,11 @@ Map {
    
     }
 }
+
+
+
+
+
 
 
 
