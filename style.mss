@@ -11,15 +11,31 @@ Map {
   polygon-fill: #fff;
 }
 
-#schools [zoom > 13]  { 
-    marker-file: url(maki/school-18.svg); 
+#schools [zoom > 12]  { 
+	marker-file: url(maki/school-18.svg); 
     marker-transform:"scale(1)";
-    text-name: [name];
-    text-face-name: 'DejaVu Sans Book';
-    text-fill: #555555;
-    text-size: 10;
-    text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 1.5;
+
+}
+
+#railways [zoom <= 18]{
+	::line, ::hatch { line-color: #777; }
+  	::line { line-width:1; }
+  	::hatch {
+    line-width: 4;
+    line-dasharray: 1, 24;
+  }
+}
+
+#railways [zoom > 18]{
+  ::line {
+    line-width: 5;
+    line-color: #777;
+  }
+  ::dash {
+    line-color: #fff;
+    line-width: 2.5;
+    line-dasharray: 6, 6;
+  }
 }
 
 #metro_labels [zoom > 6] {
@@ -178,18 +194,6 @@ Map {
    
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

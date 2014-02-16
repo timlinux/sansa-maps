@@ -12,12 +12,10 @@
   ],
   "format": "png",
   "interactivity": {
-    "layer": "",
-    "fields": [
-      "gid"
-    ],
+    "layer": "schools",
+    "fields": [],
     "template_full": "",
-    "template_teaser": ""
+    "template_teaser": "<b>School Name</b><br/>{{{name}}}"
   },
   "minzoom": 0,
   "maxzoom": 22,
@@ -206,6 +204,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "provinces"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        16.487814,
+        -34.52997,
+        32.382177,
+        -22.216162
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from railway) as railways",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.487814,-34.52997,32.382177,-22.216162",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "railways",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "railways"
     },
     {
       "geometry": "polygon",
@@ -403,34 +429,6 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "schools"
-    },
-    {
-      "geometry": "point",
-      "extent": [
-        16.48683,
-        -34.781,
-        32.86767,
-        -22.15617
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from schools) as schools_label",
-        "key_field": "gid",
-        "geometry_field": "the_geom",
-        "extent_cache": "auto",
-        "extent": "16.48683,-34.781,32.86767,-22.15617",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres"
-      },
-      "id": "schools_labels",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "schools_labels"
     }
   ],
   "scale": 1,
