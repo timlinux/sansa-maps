@@ -431,6 +431,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "schools"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        16.4518900000003,
+        -34.8341700000001,
+        32.9449800000002,
+        -22.1250299999992
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from province_new) as province_labels",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.4518900000003,-34.8341700000001,32.9449800000002,-22.1250299999992",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "province_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "province_labels"
     }
   ],
   "scale": 1,
