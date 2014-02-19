@@ -2,7 +2,7 @@ Map {
   background-color: #b8dee6;
 }
 
-#countries {
+#countries_ {
   ::outline {
     line-color: #85c5d3;
     line-width: 2;
@@ -17,7 +17,7 @@ Map {
 
 }
 
-#railways [zoom > 9] [zoom <= 18]{
+#railways [zoom > 9] [zoom <= 17]{
 	::line, ::hatch { line-color: #A0A0A0; }
   	::line { line-width:1; }
   	::hatch {
@@ -26,7 +26,7 @@ Map {
   }
 }
 
-#railways [zoom > 18]{
+#railways [zoom > 17]{
   ::line {
     line-width: 5;
     line-color: #777;
@@ -63,7 +63,7 @@ Map {
     text-allow-overlap: false;
     text-wrap-width: 100;
     text-min-padding: 10;
-    text-transform: lowercase;
+    text-transform: uppercase;
     }
 }
 
@@ -78,7 +78,7 @@ Map {
     text-allow-overlap: false;
     text-wrap-width: 100;
     text-min-padding: 10;
-    text-transform: lowercase;
+   
     } 
 }
 #lc_labels[zoom = 9] {
@@ -92,7 +92,7 @@ Map {
     text-allow-overlap: false;
     text-wrap-width: 100;
     text-min-padding: 10;
-    text-transform: lowercase;
+  
     } 
 }
 
@@ -147,14 +147,14 @@ Map {
  ::label {
     text-name: [placename];
     text-face-name: 'DejaVu Sans Book';
-    text-fill:  #FF1493;
+    text-fill:  #645551;
     text-size: 10;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
     text-allow-overlap: false;
     text-wrap-width: 50;
     text-min-padding: 10;
-    text-transform: lowercase;
+  
     
     }
 }
@@ -162,10 +162,11 @@ Map {
 #localmunics[zoom > 8] {
     ::outline{
     line-color:#964B00;
-    line-width:0.1;
+    line-width:0.2;
 }
-    
-  }
+}
+
+
 
 #districtcouncils[zoom > 6] [zoom <= 8] {
    ::outline{
@@ -191,7 +192,7 @@ Map {
 
 }
 
-#provinces {
+#provinces [zoom > 2]{
   ::outline{
     line-color:#79CBEC;
     line-width:3.5;
@@ -207,8 +208,8 @@ Map {
 #province_labels {
   ::label [zoom > 3][zoom <= 5]{
     text-name: [prov_code];
-    text-face-name: 'DejaVu Sans Bold';
-    text-fill: #002c5f ;
+    text-face-name: 'DejaVu Sans Book';
+    text-fill: #02A4D3 ;
     text-size: 9;
     text-allow-overlap: false;
     text-halo-fill: fadeout(white, 30%);
@@ -216,8 +217,8 @@ Map {
     }
   ::label[zoom > 5][zoom < 9]{
     text-name: [provname];
-    text-face-name: 'DejaVu Sans Bold';
-    text-fill: #002c5f ;
+    text-face-name: 'DejaVu Sans Book';
+    text-fill: #02A4D3 ;
     text-size: 12;
     text-allow-overlap: false;
     text-halo-fill: fadeout(white, 30%);
@@ -225,3 +226,33 @@ Map {
    
     }
 }
+
+#countries  {
+    line-color: #85c5d3;
+    line-width:0.5;
+    line-join: round;
+    polygon-opacity:0.8;
+    polygon-fill: white;
+}
+
+
+#country_labels {
+  ::label [zoom > 1][zoom <= 3]{
+    text-name: [cntry_name];
+    text-face-name: 'DejaVu Sans Bold';
+    text-fill: #4080B0;
+    text-size: 10;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 2;
+    }
+  	  ::label [zoom > 3] [zoom < 7]{
+    text-name: [cntry_name];
+    text-face-name: 'DejaVu Sans Bold';
+    text-fill: #4080B0;
+    text-size: 12;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 2;
+    }
+  }

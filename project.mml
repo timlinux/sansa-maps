@@ -28,14 +28,52 @@
   ],
   "Layer": [
     {
-      "id": "countries",
-      "name": "countries",
+      "id": "countries_",
+      "name": "countries_",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "geometry": "polygon",
       "Datasource": {
         "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
         "type": "shape"
-      }
+      },
+      "status": "off",
+      "extent": [
+        -179.99978348919961,
+        -85.051,
+        180,
+        83.63381093402975
+      ],
+      "class": "",
+      "srs-name": "900913",
+      "advanced": {}
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -180,
+        -85.051,
+        180,
+        83.6235961914062
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from country) as countries",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "-180,-90,180,83.6235961914062",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "countries",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "countries"
     },
     {
       "geometry": "polygon",
@@ -459,6 +497,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "province_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -180,
+        -85.051,
+        180,
+        83.6235961914062
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from country) as country_labels",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "-180,-90,180,83.6235961914062",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "country_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "country_labels"
     }
   ],
   "scale": 1,
