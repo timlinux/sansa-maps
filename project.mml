@@ -24,29 +24,10 @@
   "maxzoom": 22,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
-    "style.mss"
+    "style.mss",
+    "roads.mss"
   ],
   "Layer": [
-    {
-      "id": "countries_",
-      "name": "countries_",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "geometry": "polygon",
-      "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
-        "type": "shape"
-      },
-      "status": "off",
-      "extent": [
-        -179.99978348919961,
-        -85.051,
-        180,
-        83.63381093402975
-      ],
-      "class": "",
-      "srs-name": "900913",
-      "advanced": {}
-    },
     {
       "geometry": "polygon",
       "extent": [
@@ -214,6 +195,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "metros"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        20.328682819817,
+        -34.0596814894495,
+        20.551385509376,
+        -34.0033417474683
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from buildingsbuildings) as buildings",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "20.328682819817,-34.0596814894495,20.551385509376,-34.0033417474683",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "buildings",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "buildings"
     },
     {
       "geometry": "polygon",
@@ -415,62 +424,6 @@
       "name": "tribes_labels"
     },
     {
-      "geometry": "point",
-      "extent": [
-        16.49321,
-        -34.820820000000005,
-        32.8491,
-        -22.330870000000004
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from plc_name) as places",
-        "key_field": "gid",
-        "geometry_field": "the_geom",
-        "extent_cache": "auto",
-        "extent": "16.49321,-34.82082,32.8491,-22.33087",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres"
-      },
-      "id": "places",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "places"
-    },
-    {
-      "geometry": "point",
-      "extent": [
-        16.48683,
-        -34.781,
-        32.86767,
-        -22.15617
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from schools) as schools",
-        "key_field": "gid",
-        "geometry_field": "the_geom",
-        "extent_cache": "auto",
-        "extent": "16.48683,-34.781,32.86767,-22.15617",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres"
-      },
-      "id": "schools",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "schools"
-    },
-    {
       "geometry": "polygon",
       "extent": [
         16.4518900000003,
@@ -525,6 +478,149 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "country_labels"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.231493729902,
+        -34.0816252796575,
+        20.553772512749,
+        -33.98212147798
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roadsroads where osm_type = 'unclassified' or osm_type= 'residential') as unclassified_roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "20.231493729902,-34.0816252796575,20.553772512749,-33.98212147798",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "unclassified_roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "unclassified_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.231493729902,
+        -34.0816252796575,
+        20.553772512749,
+        -33.98212147798
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roadsroads where osm_type = 'tertiary') as tertiary_roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "20.231493729902,-34.0816252796575,20.553772512749,-33.98212147798",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "tertiary_roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "tertiary_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        20.231493729902,
+        -34.0816252796575,
+        20.553772512749,
+        -33.98212147798
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roadsroads) as roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "20.231493729902,-34.0816252796575,20.553772512749,-33.98212147798",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres",
+        "id": "roads",
+        "project": "sansa-maps",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "roads"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        16.49321,
+        -34.820820000000005,
+        32.8491,
+        -22.330870000000004
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from plc_name) as places",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.49321,-34.82082,32.8491,-22.33087",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "places",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "places"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        16.48683,
+        -34.781,
+        32.86767,
+        -22.15617
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from schools) as schools",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.48683,-34.781,32.86767,-22.15617",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "schools",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "schools"
     }
   ],
   "scale": 1,

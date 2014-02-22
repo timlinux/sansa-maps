@@ -2,14 +2,7 @@ Map {
   background-color: #b8dee6;
 }
 
-#countries_ {
-  ::outline {
-    line-color: #85c5d3;
-    line-width: 2;
-    line-join: round;
-  }
-  polygon-fill: #fff;
-}
+
 
 #schools [zoom > 12]  { 
 	marker-file: url(maki/school-18.svg); 
@@ -137,6 +130,14 @@ Map {
     }
 }
 
+#buildings [zoom > 13] {
+  line-color:#9677b1;
+  line-width:0.5;
+  polygon-opacity:0.5;
+  polygon-fill:#9677b1;
+}
+
+
 #tribes [zoom > 10]  {
     line-width: 0.5;
     line-color: #532f8b;
@@ -227,6 +228,8 @@ Map {
     }
 }
 
+
+
 #countries  {
     line-color: #85c5d3;
     line-width:0.5;
@@ -237,22 +240,24 @@ Map {
 
 
 #country_labels {
-  ::label [zoom > 1][zoom <= 3]{
     text-name: [cntry_name];
     text-face-name: 'DejaVu Sans Bold';
     text-fill: #4080B0;
-    text-size: 10;
     text-allow-overlap: false;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2;
-    }
-  	  ::label [zoom > 3] [zoom < 7]{
-    text-name: [cntry_name];
-    text-face-name: 'DejaVu Sans Bold';
-    text-fill: #4080B0;
-    text-size: 12;
-    text-allow-overlap: false;
-    text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 2;
-    }
+    #country_labels[zoom > 1][zoom <= 3] { text-size:10;}
+    #country_labels[zoom > 3] { text-size:12;}
+    #country_labels[zoom > 6] { text-size:14;}
   }
+
+
+
+
+
+
+
+
+
+
+
