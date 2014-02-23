@@ -284,6 +284,174 @@
       "name": "railways"
     },
     {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'tertiary') as tertiary_roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "tertiary_roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "tertiary_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'primary') as primary_roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "primary_roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "primary_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'secondary_link') as secondary_link",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "secondary_link",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "secondary_link"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'secondary') as secondary_roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "secondary_roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "secondary_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'motorway_link') as  motorway_link",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "motorway_link",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "motorway_link"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'motorway') as roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "highway_roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "highway_roads"
+    },
+    {
       "geometry": "polygon",
       "extent": [
         16.4557910141931,
@@ -478,93 +646,6 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "country_labels"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        20.231493729902,
-        -34.0816252796575,
-        20.553772512749,
-        -33.98212147798
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from roadsroads where osm_type = 'unclassified' or osm_type= 'residential') as unclassified_roads",
-        "key_field": "id",
-        "geometry_field": "geom",
-        "extent_cache": "auto",
-        "extent": "20.231493729902,-34.0816252796575,20.553772512749,-33.98212147798",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres"
-      },
-      "id": "unclassified_roads",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "unclassified_roads"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        20.231493729902,
-        -34.0816252796575,
-        20.553772512749,
-        -33.98212147798
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from roadsroads where osm_type = 'tertiary') as tertiary_roads",
-        "key_field": "id",
-        "geometry_field": "geom",
-        "extent_cache": "auto",
-        "extent": "20.231493729902,-34.0816252796575,20.553772512749,-33.98212147798",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres"
-      },
-      "id": "tertiary_roads",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "tertiary_roads"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        20.231493729902,
-        -34.0816252796575,
-        20.553772512749,
-        -33.98212147798
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from roadsroads) as roads",
-        "key_field": "id",
-        "geometry_field": "geom",
-        "extent_cache": "auto",
-        "extent": "20.231493729902,-34.0816252796575,20.553772512749,-33.98212147798",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres",
-        "id": "roads",
-        "project": "sansa-maps",
-        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
-      },
-      "id": "roads",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "roads"
     },
     {
       "geometry": "point",
