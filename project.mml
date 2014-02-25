@@ -25,7 +25,8 @@
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
     "style.mss",
-    "roads.mss"
+    "roads.mss",
+    "roads_labels.mss"
   ],
   "Layer": [
     {
@@ -258,30 +259,86 @@
     {
       "geometry": "linestring",
       "extent": [
-        16.487814,
-        -34.52997,
-        32.382177,
-        -22.216162
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select * from railway) as railways",
-        "key_field": "gid",
-        "geometry_field": "the_geom",
+        "table": "(select * from roads where highway = 'living_street') as living_street",
+        "key_field": "id",
+        "geometry_field": "geom",
         "extent_cache": "auto",
-        "extent": "16.487814,-34.52997,32.382177,-22.216162",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
         "dbname": "catalogue_gis",
         "host": "localhost",
         "port": "5432",
         "user": "petronella",
         "password": "postgres"
       },
-      "id": "railways",
+      "id": "living_street",
       "class": "",
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "railways"
+      "name": "living_street"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'road' or highway = 'unclassified'  or highway = 'residential'  ) as other_roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "other_roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "other_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'tertiary_link') as tertiary_link",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "tertiary_link",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "tertiary_link"
     },
     {
       "geometry": "linestring",
@@ -310,6 +367,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "tertiary_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'primary_link') as primary_link",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "primary_link",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "primary_link"
     },
     {
       "geometry": "linestring",
@@ -398,6 +483,34 @@
     {
       "geometry": "linestring",
       "extent": [
+        16.487814,
+        -34.52997,
+        32.382177,
+        -22.216162
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from railway) as railways",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "16.487814,-34.52997,32.382177,-22.216162",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "railways",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "railways"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
         27.5373905,
         -26.562912,
         28.5395242,
@@ -450,6 +563,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "highway_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway = 'road' or highway = 'unclassified'  or highway = 'residential'  ) as otherroads_labels",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "otherroads_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "otherroads_labels"
     },
     {
       "geometry": "polygon",
