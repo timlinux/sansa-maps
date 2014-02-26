@@ -60,7 +60,7 @@ Map {
     }
 }
 
-#lc_labels[zoom > 9] {
+#lc_labels[zoom > 9][zoom < 15] {
  ::label {
     text-name: [municname];
     text-face-name: 'DejaVu Sans Book';
@@ -155,12 +155,12 @@ Map {
     text-allow-overlap: false;
     text-wrap-width: 50;
     text-min-padding: 10;
-  
+  #places [zoom > 15] {text-size: 17;}
     
     }
 }
 
-#localmunics[zoom > 8] {
+#localmunics[zoom > 8][zoom < 15] {
     ::outline{
     line-color:#964B00;
     line-width:0.2;

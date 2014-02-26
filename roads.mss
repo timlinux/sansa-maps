@@ -202,7 +202,7 @@
     line-color: #55557F;
     line-join: round;
     line-cap: round;
-    #other_roads[zoom > 14][zoom <= 15] { line-width:4; }
+    #other_roads[zoom = 15] { line-width:4; }
     #other_roads[zoom = 16]{ line-width:9; }
     #other_roads[zoom >= 17]{ line-width:14;}
 }
@@ -211,8 +211,50 @@
     line-join: round;
     line-cap: round;
     line-width:2; 
-    #other_roads[zoom > 14][zoom <= 15]{ line-width:3;}
+    #other_roads[zoom = 15]{ line-width:3;}
     #other_roads[zoom = 16]{ line-width:8; }
     #other_roads[zoom >= 17]{ line-width:13;}
 }
 }
+
+
+#paths [zoom > 13]{
+  ::outline{
+    line-color: #55557F;
+    line-join: round;
+    line-cap: round;
+    #paths [zoom = 15] { line-width:3; }
+    #paths [zoom = 16]{ line-width:6; }
+    #paths [zoom >= 17]{ line-width:10;}
+}
+    ::fill{
+    line-color:#D2B48C ;
+    line-join: round;
+    line-cap: round;
+    line-width:2; 
+    
+    #paths [zoom > 13][highway = 'abandoned']{line-color:red ;}
+    #paths [zoom = 15]{ line-width:2;}
+    #paths [zoom = 16]{ line-width:5; }
+    #paths [zoom >= 17]{ line-width:9;}
+}
+}
+
+
+
+
+#construction_roads [zoom > 15]{
+  ::line {
+    line-width: 5;
+    line-color: red;
+  }
+  ::dash {
+    line-color: #fff;
+    line-width: 2.5;
+    line-dasharray: 6, 6;
+  }
+}
+
+
+
+

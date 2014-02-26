@@ -266,6 +266,62 @@
       ],
       "Datasource": {
         "type": "postgis",
+        "table": "(select * from roads where highway = 'paths' or highway = 'paths' or highway = 'footway' or highway = 'cycleway' or highway = 'pedestrian' or highway = 'track'  or highway = 'abandoned' ) as paths",
+        "key_field": "id ",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "paths",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "paths"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads where highway='construction') as construction_roads",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "construction_roads",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "construction_roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
         "table": "(select * from roads where highway = 'living_street') as living_street",
         "key_field": "id",
         "geometry_field": "geom",
@@ -574,7 +630,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select * from roads where highway = 'road' or highway = 'unclassified'  or highway = 'residential'  ) as otherroads_labels",
+        "table": "(select * from roads ) as otherroads_labels",
         "key_field": "id",
         "geometry_field": "geom",
         "extent_cache": "auto",
@@ -843,6 +899,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "schools"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        27.5373905,
+        -26.562912,
+        28.5395242,
+        -25.8340371
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from roads ) as roads_labels",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "27.5373905,-26.562912,28.5395242,-25.8340371",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "roads_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "roads_labels"
     }
   ],
   "scale": 1,
