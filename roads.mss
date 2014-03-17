@@ -1,5 +1,5 @@
 
-#highway_roads [zoom > 8]{
+#highway_roads [zoom > 5]{
   ::outline{
     line-color:#00FFFF;
     line-join: round;
@@ -44,7 +44,7 @@
 }
 
 
-#secondary_roads [zoom > 9]{
+#secondary_roads [zoom > 7]{
   ::outline{
     line-color:#4C2600;
     line-join: round;
@@ -58,7 +58,7 @@
     line-color:#FFAA00;
     line-join: round;
     line-cap: round;
-    line-width:2; 
+    line-width:1.5; 
     #secondary_roads[zoom > 11][zoom <= 13]{ line-width:3;line-color:#FFCE80; }
     #secondary_roads[zoom > 13][zoom <= 15] { line-width:6; line-color:#FFCE80; }
     #secondary_roads[zoom > 15]{ line-width:12;line-color:#FFCE80; }
@@ -88,7 +88,7 @@
 }
 
 
-#primary_roads[zoom > 10]{
+#primary_roads[zoom > 9]{
   ::outline{
     line-color: white;
     line-join: round;
@@ -197,12 +197,12 @@
 }
 
 
-#other_roads [zoom > 13]{
+#other_roads [zoom > 11]{
   ::outline{
     line-color: #55557F;
     line-join: round;
     line-cap: round;
-    #other_roads[zoom = 15] { line-width:4; }
+    #other_roads[zoom = 15] { line-width:6; }
     #other_roads[zoom = 16]{ line-width:9; }
     #other_roads[zoom >= 17]{ line-width:14;}
 }
@@ -210,8 +210,8 @@
     line-color:#FEFFF7;
     line-join: round;
     line-cap: round;
-    line-width:2; 
-    #other_roads[zoom = 15]{ line-width:3;}
+    line-width:1.5; 
+    #other_roads[zoom = 15]{ line-width:5;}
     #other_roads[zoom = 16]{ line-width:8; }
     #other_roads[zoom >= 17]{ line-width:13;}
 }
@@ -233,7 +233,7 @@
     line-cap: round;
     line-width:2; 
     
-    #paths [zoom > 13][highway = 'abandoned']{line-color:red ;}
+    #paths [zoom > 13][osm_type = 'abandoned']{line-color:red ;}
     #paths [zoom = 15]{ line-width:2;}
     #paths [zoom = 16]{ line-width:5; }
     #paths [zoom >= 17]{ line-width:9;}
@@ -254,7 +254,6 @@
     line-dasharray: 6, 6;
   }
 }
-
 
 
 

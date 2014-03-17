@@ -4,13 +4,13 @@ Map {
 
 
 
-#schools [zoom > 12]  { 
+#schools [zoom > 15]  { 
 	marker-file: url(maki/school-18.svg); 
     marker-transform:"scale(1)";
 
 }
 
-#railways [zoom > 9] [zoom <= 17]{
+#railways [zoom > 14] [zoom <= 17]{
 	::line, ::hatch { line-color: #A0A0A0; }
   	::line { line-width:1; }
   	::hatch {
@@ -45,7 +45,7 @@ Map {
     }
 }
 
-#dc_labels [zoom > 6] [zoom < 9] {
+#dc_labels [zoom = 14]  {
  ::label {
     text-name: [munic_name];
     text-face-name: 'DejaVu Sans Book';
@@ -60,7 +60,7 @@ Map {
     }
 }
 
-#lc_labels[zoom > 9][zoom < 15] {
+#lc_labels[zoom > 14] {
  ::label {
     text-name: [municname];
     text-face-name: 'DejaVu Sans Book';
@@ -74,20 +74,7 @@ Map {
    
     } 
 }
-#lc_labels[zoom = 9] {
- ::label {
-    text-name: [municname];
-    text-face-name: 'DejaVu Sans Book';
-    text-fill: #964B00;
-    text-size: 10;
-    text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 1.5;
-    text-allow-overlap: false;
-    text-wrap-width: 100;
-    text-min-padding: 10;
-  
-    } 
-}
+
 
 
 
@@ -114,7 +101,7 @@ Map {
 
 }
 
-#tribes_labels [zoom > 10]{
+#tribes_labels [zoom > 14]{
  ::label {
     text-name: [ta];
     text-face-name: 'DejaVu Sans Book';
@@ -138,7 +125,7 @@ Map {
 }
 
 
-#tribes [zoom > 10]  {
+#tribes [zoom > 14]  {
     line-width: 0.5;
     line-color: #532f8b;
     line-dasharray: 10, 4;
@@ -160,7 +147,7 @@ Map {
     }
 }
 
-#localmunics[zoom > 8][zoom < 15] {
+#localmunics[zoom > 14]{
     ::outline{
     line-color:#964B00;
     line-width:0.2;
@@ -169,7 +156,7 @@ Map {
 
 
 
-#districtcouncils[zoom > 6] [zoom <= 8] {
+#districtcouncils[zoom = 14 ] {
    ::outline{
    line-color:#F3EDFF;
    line-width:4;
