@@ -31,6 +31,14 @@ Map {
   }
 }
 
+
+#waterways [zoom > 9]{
+  line-width:0.8;
+  line-color:#2B65EC;
+  line-opacity: 0.5;
+}
+
+
 #metro_labels [zoom > 6] [zoom < 8] {
   ::label {
     text-name: [metro];
@@ -117,12 +125,25 @@ Map {
     }
 }
 
-#buildings [zoom > 13] {
-  line-color:#9677b1;
-  line-width:0.5;
-  polygon-opacity:0.5;
-  polygon-fill:#9677b1;
+#buildings_labels [zoom >= 16]{
+  	text-name: [name];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill: #800080;
+    text-wrap-width: 80;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 1.5;
 }
+
+#buildings [zoom > 14]{
+  	line-color:#9B7DAA;
+ 	line-width:0.5;
+    line-opacity  :0.5;
+  	polygon-opacity:0.5;
+  	polygon-fill:#9B7DAA;
+}
+
+
 
 
 #tribes [zoom > 14]  {
@@ -201,7 +222,7 @@ Map {
     }
 }
 
-#water {
+#water [zoom > 3] {
     line-color:#2B65EC;
   	line-width:0.5;
   	line-opacity:0.5;
@@ -264,7 +285,8 @@ Map {
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
     #places[zoom >= 10][zoom < 12] { text-size:12;}
-    #places[zoom >= 12] { text-size:14; text-halo-radius: 2;}
+    #places[zoom >= 12] [zoom < 15]{ text-size:14; text-halo-radius: 2;}
+    #places[zoom >= 15] { text-size:16;text-halo-radius: 2;}
 }
 
 
@@ -275,8 +297,18 @@ Map {
     text-allow-overlap: false;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
-    #places[zoom >= 13] { text-size:12;}
+    #places[zoom >= 13][zoom < 15] { text-size:12;}
+    #places[zoom >= 15] { text-size:16;text-halo-radius: 2;}
 }
+
+
+
+
+
+
+
+
+
 
 
 

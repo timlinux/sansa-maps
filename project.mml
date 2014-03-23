@@ -229,34 +229,6 @@
     {
       "geometry": "polygon",
       "extent": [
-        20.328682819817,
-        -34.0596814894495,
-        20.551385509376,
-        -34.0033417474683
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from buildingsbuildings) as buildings",
-        "key_field": "id",
-        "geometry_field": "geom",
-        "extent_cache": "auto",
-        "extent": "20.328682819817,-34.0596814894495,20.551385509376,-34.0033417474683",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres"
-      },
-      "id": "buildings",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "buildings"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
         16.4518900000003,
         -34.8341700000001,
         32.9449800000002,
@@ -284,6 +256,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "provinces"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        16.4738351,
+        -34.71413,
+        32.8459376,
+        -22.1283914
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from waterways) as waterways",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "16.4738351,-34.71413,32.8459376,-22.1283914",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "waterways",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "waterways"
     },
     {
       "geometry": "linestring",
@@ -823,6 +823,34 @@
     {
       "geometry": "polygon",
       "extent": [
+        16.4867397,
+        -34.6698709,
+        32.7562011,
+        -22.1920412
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from buildings) as buildings",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "16.4867397,-34.6698709,32.7562011,-22.1920412",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "buildings",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "buildings"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         22.6991665317768,
         -33.4178829099946,
         32.8946409953876,
@@ -934,6 +962,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "country_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        16.4867397,
+        -34.6698709,
+        32.7562011,
+        -22.1920412
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from buildings) as buildings",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "16.4867397,-34.6698709,32.7562011,-22.1920412",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "buildings_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "buildings_labels"
     },
     {
       "geometry": "point",
