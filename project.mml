@@ -12,13 +12,13 @@
   ],
   "format": "png",
   "interactivity": {
-    "layer": "schools",
+    "layer": "pois",
     "fields": [
       "name",
-      "gid"
+      "id"
     ],
     "template_full": "",
-    "template_teaser": "<b>School Name</b><br/>{{{name}}}"
+    "template_teaser": "<b>Place Name</b><br/>{{{name}}}"
   },
   "minzoom": 0,
   "maxzoom": 22,
@@ -26,7 +26,8 @@
   "Stylesheet": [
     "style.mss",
     "roads.mss",
-    "roads_labels.mss"
+    "roads_labels.mss",
+    "points.mss"
   ],
   "Layer": [
     {
@@ -56,6 +57,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "countries"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        16.4588899,
+        -34.7471126,
+        32.8725801,
+        -22.1881813
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from water) as water\n",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "16.4588899,-34.7471126,32.8725801,-22.1881813",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "water",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "water"
     },
     {
       "geometry": "polygon",
@@ -266,7 +295,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select * from africa_roads where osm_type = 'paths' or osm_type = 'paths' or osm_type = 'footway' or osm_type = 'cycleway' or osm_type = 'pedestrian' or osm_type = 'track'  or osm_type = 'abandoned' ) as paths",
+        "table": "(select * from africa_roads where osm_type = 'paths' or osm_type = 'footway' or osm_type = 'cycleway' or osm_type = 'pedestrian' or osm_type = 'track'  or osm_type = 'abandoned' ) as paths",
         "key_field": "id ",
         "geometry_field": "geom",
         "extent_cache": "auto",
@@ -350,7 +379,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select * from africa_roads where osm_type = 'road' or osm_type = 'unclassified'  or osm_type = 'residential'  ) as other_roads",
+        "table": "(select * from africa_roads where osm_type = 'road' or osm_type = 'unclassified'  or osm_type = 'residential' or osm_type = 'service'  ) as other_roads",
         "key_field": "id",
         "geometry_field": "geom",
         "extent_cache": "auto",
@@ -850,6 +879,37 @@
     {
       "geometry": "polygon",
       "extent": [
+        16.4588899,
+        -34.7471126,
+        32.8725801,
+        -22.1881813
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from water) as water_labels",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "16.4588899,-34.7471126,32.8725801,-22.1881813",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres",
+        "id": "water_labels",
+        "project": "sansa-maps",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "water_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "water_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         -180,
         -85.051,
         180,
@@ -878,35 +938,6 @@
     {
       "geometry": "point",
       "extent": [
-        16.49321,
-        -34.820820000000005,
-        32.8491,
-        -22.330870000000004
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from plc_name) as places",
-        "key_field": "gid",
-        "geometry_field": "the_geom",
-        "extent_cache": "auto",
-        "extent": "16.49321,-34.82082,32.8491,-22.33087",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres"
-      },
-      "id": "places",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "places",
-      "status": "off"
-    },
-    {
-      "geometry": "point",
-      "extent": [
         16.48683,
         -34.781,
         32.86767,
@@ -930,7 +961,67 @@
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "schools"
+      "name": "schools",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        16.4936818,
+        -34.8331468,
+        32.755694,
+        -22.2010036
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from pois) as pois",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "16.4936818,-34.8331468,32.755694,-22.2010036",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres",
+        "id": "pois",
+        "project": "sansa-maps",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "pois",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "pois"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        16.4683333,
+        -34.8225,
+        32.8248255,
+        -22.1863242
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from places) as places",
+        "key_field": "id",
+        "geometry_field": "geom",
+        "extent_cache": "auto",
+        "extent": "16.4683333,-34.8225,32.8248255,-22.1863242",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "places",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "places"
     }
   ],
   "scale": 1,

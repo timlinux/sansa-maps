@@ -31,7 +31,7 @@ Map {
   }
 }
 
-#metro_labels [zoom > 6]  {
+#metro_labels [zoom > 6] [zoom < 8] {
   ::label {
     text-name: [metro];
     text-face-name: 'DejaVu Sans Bold';
@@ -131,21 +131,7 @@ Map {
     line-dasharray: 10, 4;
 }
 
-#places [zoom > 10] {
- ::label {
-    text-name: [placename];
-    text-face-name: 'DejaVu Sans Book';
-    text-fill:  #645551;
-    text-size: 10;
-    text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 1.5;
-    text-allow-overlap: false;
-    text-wrap-width: 50;
-    text-min-padding: 10;
-  #places [zoom > 15] {text-size: 17;}
-    
-    }
-}
+
 
 #localmunics[zoom > 14]{
     ::outline{
@@ -203,7 +189,7 @@ Map {
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2;
     }
-  ::label[zoom > 5][zoom < 9]{
+  ::label[zoom > 5][zoom <= 7]{
     text-name: [provname];
     text-face-name: 'DejaVu Sans Book';
     text-fill: #02A4D3 ;
@@ -215,6 +201,24 @@ Map {
     }
 }
 
+#water {
+    line-color:#2B65EC;
+  	line-width:0.5;
+  	line-opacity:0.5;
+  	polygon-opacity:0.5;
+  	polygon-fill:#2B65EC;
+
+}
+
+
+#water_labels [zoom > 13]{
+  	text-name: [name];
+    text-face-name: 'DejaVu Serif Italic';
+    text-fill: #2B65EC;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 1.5;
+}
 
 
 #countries  {
@@ -239,7 +243,40 @@ Map {
   }
 
 
+#places [zoom > 7] [fclass = 'city']{
+   	text-name: [name];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill: black;
+    text-size: 13;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 2;
+    #places[zoom >= 10] [zoom < 12] { text-size:15;}
+    #places[zoom >= 12] { text-size:18;}
+}
 
+
+#places [zoom > 8] [fclass = 'town']{
+   	text-name: [name];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill: black;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 1.5;
+    #places[zoom >= 10][zoom < 12] { text-size:12;}
+    #places[zoom >= 12] { text-size:14; text-halo-radius: 2;}
+}
+
+
+#places [zoom >= 12] [fclass = 'suburb']{
+   	text-name: [name];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill: #504A4B;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 1.5;
+    #places[zoom >= 13] { text-size:12;}
+}
 
 
 
