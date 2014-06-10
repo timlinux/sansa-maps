@@ -187,17 +187,25 @@ Map {
 
 }
 
-#provinces [zoom > 2]{
+#provinces [zoom > 3]{
   ::outline{
-    line-color:#79CBEC;
-    line-width:3.5;
-}
-    ::fill{
-    line-color:#4F4F4F;
+    line-color:#6996AD;
     line-width:0.5;
 }
-  
 }
+
+#africa_admin[zoom > 3] {
+  ::outline{
+    line-color:#6996AD;
+    line-width:0.5;
+}
+//    ::fill{
+ //   line-color:#C0C0C0;
+ //   line-width:1;
+//}
+}
+
+
 
 
 #province_labels {
@@ -215,6 +223,19 @@ Map {
     text-face-name: 'DejaVu Sans Book';
     text-fill: #02A4D3 ;
     text-size: 12;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 2;
+   
+    }
+}
+
+#africa_admin_labels {
+  ::label[zoom > 4][zoom <= 9]{
+    text-name: [admin_name];
+    text-face-name: 'DejaVu Sans Book';
+    text-fill: #02A4D3 ;
+    text-size: 10;
     text-allow-overlap: false;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2;
@@ -241,14 +262,54 @@ Map {
     text-halo-radius: 1.5;
 }
 
+#africa_water {
+//  line-color:#594;
+ // line-width:0.5;
+  polygon-opacity:1;
+  polygon-fill:#87CEEB;
+}
 
-#countries  {
+
+#africa_water_labels[zoom > 13]{
+  	text-name: [name_of_wa];
+    text-face-name: 'DejaVu Serif Italic';
+    text-fill: #2B65EC;
+    text-allow-overlap: false;
+    text-halo-fill: fadeout(white, 30%);
+    text-halo-radius: 1.5;
+}
+
+
+
+
+#countries [zoom <= 5] {
     line-color: #85c5d3;
     line-width:0.5;
     line-join: round;
     polygon-opacity:0.8;
     polygon-fill: white;
 }
+
+#countries[zoom > 5]  {
+    line-color: #5F8D96;
+ //   line-width:4;
+    line-join: round;
+     polygon-opacity:0.8;
+    polygon-fill: white;
+}
+
+#countries_outlines {
+   ::outline{
+    line-color:#79CBEC;
+    line-width:3.5;
+}
+    ::fill{
+    line-color:#4F4F4F;
+    line-width:0.5;
+}
+}
+
+
 
 
 #country_labels {
@@ -298,25 +359,8 @@ Map {
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
     #places[zoom >= 13][zoom < 15] { text-size:12;}
-    #places[zoom >= 15] { text-size:16;text-halo-radius: 2;}
+    #places[zoom >= 15] { text-size:16;text-halo-radius: 2}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -61,6 +61,90 @@
     {
       "geometry": "polygon",
       "extent": [
+        -25.3605575561523,
+        -40.4038925170898,
+        63.4986038208008,
+        37.5394439697266
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from africa_admin) as africa_admin",
+        "key_field": "id",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "-25.3605575561523,-40.4038925170898,63.4986038208008,37.5394439697266",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "africa_admin",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "africa_admin"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -16.431640625,
+        -34.7528343200684,
+        49.3212203979492,
+        37.2018585205078
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from africa_waterbodies) as africa_water",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "-16.431640625,-34.7528343200684,49.3212203979492,37.2018585205078",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "africa_water",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "africa_water"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -180,
+        -85.051,
+        180,
+        83.6235961914062
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from country) as countries_outlines",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "-180,-90,180,83.6235961914062",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "countries_outlines",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "countries_outlines"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         16.4588899,
         -34.7471126,
         32.8725801,
@@ -201,34 +285,6 @@
     {
       "geometry": "polygon",
       "extent": [
-        18.308153015351,
-        -34.3596379963018,
-        31.185657612692204,
-        -25.323120589461
-      ],
-      "Datasource": {
-        "type": "postgis",
-        "table": "(select * from a_munic) as metros",
-        "key_field": "gid",
-        "geometry_field": "the_geom",
-        "extent_cache": "auto",
-        "extent": "18.308153015351,-34.3596379963018,31.1856576126922,-25.323120589461",
-        "dbname": "catalogue_gis",
-        "host": "localhost",
-        "port": "5432",
-        "user": "petronella",
-        "password": "postgres"
-      },
-      "id": "metros",
-      "class": "",
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
-      "name": "metros"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
         16.4518900000003,
         -34.8341700000001,
         32.9449800000002,
@@ -256,6 +312,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "provinces"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        18.308153015351,
+        -34.3596379963018,
+        31.185657612692204,
+        -25.323120589461
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from a_munic) as metros",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "18.308153015351,-34.3596379963018,31.1856576126922,-25.323120589461",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "metros",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "metros"
     },
     {
       "geometry": "linestring",
@@ -879,6 +963,34 @@
     {
       "geometry": "polygon",
       "extent": [
+        -25.3605575561523,
+        -40.4038925170898,
+        63.4986038208008,
+        37.5394439697266
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from africa_admin) as africa_admin_labels",
+        "key_field": "id",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "-25.3605575561523,-40.4038925170898,63.4986038208008,37.5394439697266",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "africa_admin_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "africa_admin_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
         16.4518900000003,
         -34.8341700000001,
         32.9449800000002,
@@ -903,6 +1015,34 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "province_labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -16.431640625,
+        -34.7528343200684,
+        49.3212203979492,
+        37.2018585205078
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select * from africa_waterbodies) as africa_water_labels",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "extent_cache": "auto",
+        "extent": "-16.431640625,-34.7528343200684,49.3212203979492,37.2018585205078",
+        "dbname": "catalogue_gis",
+        "host": "localhost",
+        "port": "5432",
+        "user": "petronella",
+        "password": "postgres"
+      },
+      "id": "africa_water_labels",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "africa_water_labels"
     },
     {
       "geometry": "polygon",
